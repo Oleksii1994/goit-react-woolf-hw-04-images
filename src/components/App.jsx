@@ -68,6 +68,9 @@ export const App = () => {
   };
 
   const handleSubmit = searchWord => {
+    if (searchWord === searchQuerry) {
+      return Notiflix.Notify.warning('Try another word to find');
+    }
     setSearchQuerry(searchWord.toLowerCase().trim());
     setPage(1);
     setImages([]);
